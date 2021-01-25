@@ -12,7 +12,8 @@ new Chart(document.getElementById("oneida-line-chart"), {
             "12/28/20",
             "01/04/21",
             "01/08/21",
-            "01/12/21"     
+            "01/12/21",
+            "01/23/21"
         ],
         datasets: [{
             data: [1151,
@@ -25,7 +26,8 @@ new Chart(document.getElementById("oneida-line-chart"), {
                 4936,
                 5259,
                 6030,
-                6529
+                6529,
+                7328
             ],
             label: "Oneida",
             borderColor: "#3e95cd",
@@ -66,7 +68,8 @@ new Chart(document.getElementById("herkimer-line-chart"), {
             "12/28/20",
             "01/04/21",
             "01/08/21",
-            "01/12/21"
+            "01/12/21",
+            "01/23/21"
         ],
         datasets: [{
             data: [160,
@@ -79,7 +82,8 @@ new Chart(document.getElementById("herkimer-line-chart"), {
                 807,
                 1088,
                 1292,
-                1287
+                1287,
+                1099
             ],
             label: "Herkimer",
             borderColor: "#3cba9f",
