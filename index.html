@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCrumbs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .article-preview {
+            width: 30%;
+            margin: 10px;
+            box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+            padding: 10px;
+        }
+
+        .article-preview img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 600px) {
+            .article-preview {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CSCrumbs</h1>
+    <input type="text" id="searchInput" onkeyup="searchArticles()" placeholder="Search for articles...">
+</header>
+
+<main>
+
+    <div class="article-preview">
+        <a href="https://www.cscrumbs.com/article1-8_Common_SaaS_Sales_Mistakes/">
+            <img src="\img\1\1saassalesmistakes.png" alt="8 Common SaaS Sales Mistakes">
+        </a>
+        <h1>8 Common SaaS Sales Mistakes</h1>
+        <p>When a software as a service (SaaS) product is marketed incorrectly it sells less effectively. Fewer sales means less revenue.</p>
+    </div>
+
+</main>
+
+<script>
+    function searchArticles() {
+        let input = document.getElementById('searchInput');
+        let filter = input.value.toUpperCase();
+        let main = document.querySelector('main');
+        let articles = main.getElementsByClassName('article-preview');
+
+        for (let i = 0; i < articles.length; i++) {
+            let p = articles[i].getElementsByTagName('p')[0];
+            if (p.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                articles[i].style.display = "";
+            } else {
+                articles[i].style.display = "none";
+            }
+        }
+    }
+</script>
+</body>
+</html>
